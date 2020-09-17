@@ -1,5 +1,6 @@
 print("Hello World")
 import discord
+import os
 import asyncio
 import re
 import random
@@ -112,4 +113,5 @@ async def on_message(message):
             await message.channel.send(embed=discord.Embed(title="권한 부족", description = message.author.mention + "님은 채널을 관리 할 수 있는 권한이 없습니다.", color = 0xff0000))
             return
     
-app.run("NzU0NTEyNzcwNDM4OTIyMjcx.X110xg.iO9xSKwD_2IaJdy5i-gThYdLN3c")
+access_token = os.environ["BOT_TOKEN"]
+app.run(access_token)
